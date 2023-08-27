@@ -13,3 +13,18 @@ Spring Microservices
   - `brew install maven`
 - Create Archetype
   - `mvn archetype:generate -DgroupId=com.kwebdev -DartifactId=kwebdevservices -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false`
+
+## 2. Create Controller and Service
+
+## 3. Create docker-compose file and run it
+  - `docker compose up -d`
+    - MacBook-Pro spring-microservices % docker compose up -d
+    -  [+] Running 29/2
+    -  ✔ postgres 13 layers [⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                                                                                                                                            26.5s
+    -  ✔ pgadmin 14 layers [⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                                                                                                                                            29.3s
+    -  [+] Running 5/5
+    -  ✔ Network spring-microservices_postgres   Created                                                                                                                                                       0.0s
+    -  ✔ Volume "spring-microservices_pgadmin"   Created                                                                                                                                                       0.0s
+    -  ✔ Volume "spring-microservices_postgres"  Created                                                                                                                                                       0.0s
+    -  ✔ Container postgres                      Started                                                                                                                                                       0.7s
+    -  ✔ Container pgadmin                       Started  
