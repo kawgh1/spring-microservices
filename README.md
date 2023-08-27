@@ -38,3 +38,27 @@ Spring Microservices
       | postgres     |       postgres       |     "docker-entrypoint.s…" |  postgres      |      3 minutes ago   |    Up 3 minutes   |     0.0.0.0:5432->5432/tcp |
     
     - in a new browser window go to **`localhost:5050`** and it should pull up a `pgAdmin` page to log in to our `postgres database`
+        - **add a new server**
+        - Hostname / address is `postgres` because that is the name of the network we defined in our `docker-compose` file for `pgAdmin` and our `postgres DB` to talk to each other, otherwise it would be `localhost`
+
+## 4. Postgres
+  - Once the Controller, Service and JPA Repository are up and running, ensure `postgres` is configured on the controller under `resources/application.yml`
+  - server:
+    port: 8080
+    spring:
+    application:
+    name: customer
+    datasource:
+    password: password
+    url: jdbc:postgresql://localhost:5432/customer
+    username: amigoscode
+    jpa:
+    hibernate:
+    ddl-auto: update
+    properties:
+    hibernate:
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+    format_sql: true
+    show-sql: true 
+  - Create the database in the `pgAdmin` at `localhost:5050`
+  - In Postman send a `POST` request to insert an object into the DB and verify the insert is successful
