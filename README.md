@@ -28,9 +28,11 @@ Spring Microservices
     -  ✔ Volume "spring-microservices_postgres"  Created                                                                                                                                                       0.0s
     -  ✔ Container postgres                      Started                                                                                                                                                       0.7s
     -  ✔ Container pgadmin                       Started  
+    <br>
   - Verify containers running
     - `docker compose ps`
-      | NAME | IMAGE    |           COMMAND         |         SERVICE       |      CREATED      |       STATUS         |     PORTS |
-      | ----- | ----- | -----| -----| -----| -----| -----| -----|
+  
+    - | NAME | IMAGE    |           COMMAND         |         SERVICE       |      CREATED      |       STATUS         |     PORTS |
+      | ----- | ----- | ----- | -----| ----- | ----- | ----- |
       | pgadmin      |       dpage/pgadmin4  |    "/entrypoint.sh"      |   pgadmin     |        3 minutes ago   |    Up 3 minutes   |     443/tcp, 0.0.0.0:5050->80/tcp |
       | postgres     |       postgres       |     "docker-entrypoint.s…" |  postgres      |      3 minutes ago   |    Up 3 minutes   |     0.0.0.0:5432->5432/tcp |
