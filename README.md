@@ -62,3 +62,11 @@ Spring Microservices
     show-sql: true 
   - Create the database in the `pgAdmin` at `localhost:5050`
   - In Postman send a `POST` request to insert an object into the DB and verify the insert is successful
+
+
+
+## 5. Eureka Microservice Discovery
+- ### Service Discovery
+  - The process of automatically detecting devices and services on a network so that each microservice does not have to manually keep track and constantly register new IP addresses
+  - A Eureka Server manages all of this and acts as a middleman between all the microservices
+  - ![eureka-service-discovery](https://raw.githubusercontent.com/kawgh1/spring-microservices/main/images/eureka-microservice-discovery.png)
