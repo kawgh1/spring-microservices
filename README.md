@@ -68,5 +68,9 @@ Spring Microservices
 ## 5. Eureka Microservice Discovery
 - ### Service Discovery
   - The process of automatically detecting devices and services on a network so that each microservice does not have to manually keep track and constantly register new IP addresses
+      - ![eureka-service-discovery](https://raw.githubusercontent.com/kawgh1/spring-microservices/main/images/eureka-microservice-discovery.png)
   - A Eureka Server manages all of this and acts as a middleman between all the microservices
-  - ![eureka-service-discovery](https://raw.githubusercontent.com/kawgh1/spring-microservices/main/images/eureka-microservice-discovery.png)
+      - ![eureka-service-discovery-example](https://raw.githubusercontent.com/kawgh1/spring-microservices/main/images/eureka-service-discovery-example.png)
+
+  - As the network scales and the number of APIs and microservices scale, including duplicates, the Eureka Server can quickly become a Single Point of Failure that must be kept running at all times
+    - This issue will later be resolved with Kubernetes
