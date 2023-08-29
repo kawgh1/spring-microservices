@@ -73,4 +73,10 @@ Spring Microservices
       - ![eureka-service-discovery-example](https://raw.githubusercontent.com/kawgh1/spring-microservices/main/images/eureka-service-discovery-example.png)
 
   - As the network scales and the number of APIs and microservices scale, including duplicates, the Eureka Server can quickly become a Single Point of Failure that must be kept running at all times
-    - This issue will later be resolved with Kubernetes
+    - ### `This issue will later be resolved with Kubernetes`
+
+## 6. Spring Cloud
+- Eureka Server is running on `port: 8761` --> Dashboard `localhost:8761`
+- Customer Service is running on `port: 8080`
+- Fraud Service is running on `port: 8081`
+- pgAdmin is running on `port: 5050` --> Dashboard `localhost:5050`
