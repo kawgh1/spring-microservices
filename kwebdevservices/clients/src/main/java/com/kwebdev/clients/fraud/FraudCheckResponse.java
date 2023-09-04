@@ -1,4 +1,4 @@
-package com.kwebdev.fraud;
+package com.kwebdev.clients.fraud;
 
 public record FraudCheckResponse(Boolean isFraudulentUser) {
 }

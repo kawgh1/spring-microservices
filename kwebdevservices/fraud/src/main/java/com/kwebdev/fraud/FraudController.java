@@ -1,5 +1,6 @@
 package com.kwebdev.fraud;
 
+import com.kwebdev.clients.fraud.FraudCheckResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

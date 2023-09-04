@@ -1,6 +1,7 @@
 package com.kwebdev.customer;
 
-import com.kwebdev.fraud.FraudCheckResponse;
+import com.kwebdev.clients.fraud.FraudCheckResponse;
+import com.kwebdev.clients.fraud.FraudClient;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ public class CustomerService {
 
     private final CustomerRepository customerRepository;
     private final RestTemplate restTemplate;
+    private final FraudClient fraudClient;
 
 //    replaced with @AllArgsConstructor
 //    public CustomerService(CustomerRepository customerRepository) {
@@ -29,12 +31,14 @@ public class CustomerService {
         // todo: save customer to DB - done
         customerRepository.saveAndFlush(customer); // saveAndFlush gives us access to customer properties
         // todo: check if fraudster
-        FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-//                "http://localhost:8081/api/v1/fraud-check/{customerId}", - handled by Eureka now
-                "http://FRAUD/api/v1/fraud-check/{customerId}",
-                FraudCheckResponse.class,
-                customer.getId()
-        );
+//        FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
+////                "http://localhost:8081/api/v1/fraud-check/{customerId}", - handled by Eureka now
+//                "http://FRAUD/api/v1/fraud-check/{customerId}",
+//                FraudCheckResponse.class,
+//                customer.getId()
+//        );
+        // Refactored to the Fraud Module
+        FraudCheckResponse fraudCheckResponse = fraudClient.isFraudulentCustomer(customer.getId());
 
         if(fraudCheckResponse.isFraudulentUser()) {
          throw new IllegalStateException("fraudulent user");
